@@ -8,4 +8,5 @@ const todoItemFactory = (title, dueDate, description) => {
 
 const projectFactory = (title) => {
     title = title;
+    deleteButton = false;
 }
