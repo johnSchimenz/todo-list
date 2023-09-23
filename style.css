@@ -1,3 +1,8 @@
-h1 {
-    font: 48px;
+.container {
+    border-style: solid;
+    border-color: blue;
+}
+
+#bottom-container {
+    display: flex;
 }
