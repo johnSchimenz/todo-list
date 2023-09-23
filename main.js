@@ -5,3 +5,7 @@ const todoItemFactory = (title, dueDate, description) => {
     checkboxButton = false;
     deleteButton = false;
 }
+
+const projectFactory = (title) => {
+    title = title;
+}
