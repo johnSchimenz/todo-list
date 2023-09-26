@@ -13,6 +13,21 @@ console.log(chores);
 const tripPacking = ProjectFactory('Packing for Trip');
 console.log(tripPacking);
 
+// Display projects in the DOM
+const leftBottomContainer = document.querySelector('#left-bottom-container');
+
+const groceriesProject = document.createElement('div');
+groceriesProject.setAttribute('id', groceries.title);
+groceriesProject.textContent = groceries.title;
+leftBottomContainer.appendChild(groceriesProject);
+const choresProject = document.createElement('div');
+choresProject.setAttribute('id', chores.title);
+choresProject.textContent = chores.title;
+leftBottomContainer.appendChild(choresProject);
+const tripPackingProject = document.createElement('div');
+tripPackingProject.setAttribute('id', tripPacking.title);
+tripPackingProject.textContent = tripPacking.title;
+leftBottomContainer.appendChild(tripPackingProject);
 
 // Create a todo item
 const TodoItemFactory = (title, dueDate, description) => {
