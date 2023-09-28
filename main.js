@@ -16,22 +16,30 @@ let projectsArray = [groceries, chores, tripPacking];
 
 // Display projects in the DOM
 const leftBottomContainer = document.querySelector('#left-bottom-container');
+const rightBottomContainer = document.querySelector('#right-bottom-container');
+let counter = 0;
 
 const groceriesProject = document.createElement('div');
-groceriesProject.setAttribute('id', groceries.title.toLowerCase());
+//groceriesProject.setAttribute('id', groceries.title.toLowerCase());
+groceriesProject.setAttribute('id', counter);
 groceriesProject.setAttribute('class', 'project');
 groceriesProject.textContent = groceries.title;
 leftBottomContainer.appendChild(groceriesProject);
+counter++;
 const choresProject = document.createElement('div');
-choresProject.setAttribute('id', chores.title.toLowerCase());
+//choresProject.setAttribute('id', chores.title.toLowerCase());
+choresProject.setAttribute('id', counter);
 choresProject.setAttribute('class', 'project');
 choresProject.textContent = chores.title;
 leftBottomContainer.appendChild(choresProject);
+counter++;
 const tripPackingProject = document.createElement('div');
-tripPackingProject.setAttribute('id', 'packing-for-trip'); // Different from others since title has spaces
+//tripPackingProject.setAttribute('id', 'packing-for-trip'); // Different from others since title has spaces
+tripPackingProject.setAttribute('id', counter); // Different from others since title has spaces
 tripPackingProject.setAttribute('class', 'project');
 tripPackingProject.textContent = tripPacking.title;
 leftBottomContainer.appendChild(tripPackingProject);
+counter++;
 
 // Create a toDo item
 const toDoItemFactory = (title, dueDate, description) => {
@@ -65,6 +73,10 @@ tripPacking.toDoArray = [tShirts, sunblock, camera];
 const projects = document.querySelectorAll('.project');
 projects.forEach((project) => {
     project.addEventListener('click', () => {
-        console.log(project);
+        let currentProject = document.createElement('div');
+        currentProject.textContent = projectsArray[project.id];
+        console.log(projectsArray[project.id]);
+        //currentProject.textContent = projectsArray[project.id];
+        rightBottomContainer.appendChild(currentProject);
     })
 })
