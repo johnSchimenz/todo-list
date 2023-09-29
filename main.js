@@ -1,9 +1,14 @@
 // Create a project
 const ProjectFactory = (title) => {
     title = title;
+    description = description;
+    dueDate = dueDate;
+    priority = priority;
+    toDoArray = [];
+    complete = false;
     openedProject = false;
     deleteButton = false;
-    return {title, openedProject, deleteButton};
+    return {title, description, dueDate, priority, complete, openedProject, deleteButton};
 }
 
 // Create a few example projects (will delete later)
@@ -12,8 +17,17 @@ const chores = ProjectFactory('Chores');
 const tripPacking = ProjectFactory('Packing for Trip');
 
 // Array of projects
-let projectsArray = [groceries, chores, tripPacking];
+const projectsArray = [];
 
+// Push created projects to array
+projectsArray.push(groceries);
+projectsArray.push(chores);
+projectsArray.push(tripPacking);
+
+// Display list of created projects
+console.log(projectsArray);
+
+/*
 // Display projects in the DOM
 const leftBottomContainer = document.querySelector('#left-bottom-container');
 const rightBottomContainer = document.querySelector('#right-bottom-container');
@@ -40,6 +54,7 @@ tripPackingProject.setAttribute('class', 'project');
 tripPackingProject.textContent = tripPacking.title;
 leftBottomContainer.appendChild(tripPackingProject);
 counter++;
+*/
 
 // Create a toDo item
 const toDoItemFactory = (title, dueDate, description) => {
@@ -69,6 +84,12 @@ groceries.toDoArray = [apples, bananas, groundBeef];
 chores.toDoArray = [makeBed, washDishes, vaccuum];
 tripPacking.toDoArray = [tShirts, sunblock, camera];
 
+// Display a project and toDo items
+console.log(groceries.title);
+for (let i = 0; i < groceries.toDoArray.length; i++) {
+    console.log(groceries.toDoArray[i].title);
+}
+/*
 // Upon click, display toDo items on right side
 const projects = document.querySelectorAll('.project');
 projects.forEach((project) => {
@@ -80,3 +101,4 @@ projects.forEach((project) => {
         rightBottomContainer.appendChild(currentProject);
     })
 })
+*/
