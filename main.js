@@ -1,9 +1,9 @@
 // Create a project
-const ProjectFactory = (title) => {
-    title = title;
-    description = description;
-    dueDate = dueDate;
-    priority = priority;
+const ProjectFactory = (title, description) => {
+    title = '';
+    description = '';
+    dueDate = '';
+    priority = '';
     toDoArray = [];
     complete = false;
     openedProject = false;
