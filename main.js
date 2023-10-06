@@ -1,4 +1,4 @@
-// Create a project
+// CONSOLE: Create a project
 const ProjectFactory = (title) => {
     title = title;
     description = '';
@@ -11,24 +11,20 @@ const ProjectFactory = (title) => {
     return {title, description, dueDate, priority, complete, openedProject, deleteButton};
 }
 
-// Create a few example projects (will delete later)
+// CONSOLE: Create a few example projects (will delete later)
 const groceries = ProjectFactory('Groceries');
 const chores = ProjectFactory('Chores');
 const tripPacking = ProjectFactory('Packing for Trip');
 
-// Array of projects
+// CONSOLE: Array of projects
 const projectsArray = [];
 
-// Push created projects to array
+// CONSOLE: Push created projects to array
 projectsArray.push(groceries);
 projectsArray.push(chores);
 projectsArray.push(tripPacking);
 
-// Display list of created projects
-console.log(projectsArray);
-
-/*
-// Display projects in the DOM
+// DOM: Display projects in the DOM
 const leftBottomContainer = document.querySelector('#left-bottom-container');
 const rightBottomContainer = document.querySelector('#right-bottom-container');
 let counter = 0;
@@ -54,9 +50,8 @@ tripPackingProject.setAttribute('class', 'project');
 tripPackingProject.textContent = tripPacking.title;
 leftBottomContainer.appendChild(tripPackingProject);
 counter++;
-*/
 
-// Create a toDo item
+// CONSOLE: Create a toDo item
 const toDoItemFactory = (title, dueDate, description) => {
     title = title;
     dueDate = dueDate;
@@ -66,7 +61,7 @@ const toDoItemFactory = (title, dueDate, description) => {
     return {title, dueDate, description, checkboxButton, deleteButton};
 }
 
-// Create some example toDo items (will delete later)
+// CONSOLE: Create some example toDo items (will delete later)
 const apples = toDoItemFactory('Apples', '1/1/2023', '1 bag');
 const bananas = toDoItemFactory('Bananas', '2/1/2023', '5');
 const groundBeef = toDoItemFactory('Ground Beef', '3/1/2023', '2 lb');
@@ -79,26 +74,24 @@ const tShirts = toDoItemFactory('T-Shirts', '5/5/2023', '5');
 const sunblock = toDoItemFactory('Sunblock', '5/5/2023', '1');
 const camera = toDoItemFactory('Camera', '5/5/2023', '1');
 
-// Add toDo items to project objects
+// CONSOLE: Add toDo items to project objects
 groceries.toDoArray = [apples, bananas, groundBeef];
 chores.toDoArray = [makeBed, washDishes, vaccuum];
 tripPacking.toDoArray = [tShirts, sunblock, camera];
 
-// Display a project and toDo items
-console.log(groceries.title);
+// CONSOLE: Display a project and toDo items
 for (let i = 0; i < groceries.toDoArray.length; i++) {
     console.log(groceries.toDoArray[i].title);
 }
-/*
-// Upon click, display toDo items on right side
+
+// DOM: Upon click, display toDo items on right side
 const projects = document.querySelectorAll('.project');
 projects.forEach((project) => {
     project.addEventListener('click', () => {
         let currentProject = document.createElement('div');
-        currentProject.textContent = projectsArray[project.id];
-        console.log(projectsArray[project.id]);
+        currentProject.textContent = projectsArray[project.id].toDoArray[project.id].title; // Displays parts of toDo object properties
+        console.log(projectsArray);
         //currentProject.textContent = projectsArray[project.id];
         rightBottomContainer.appendChild(currentProject);
     })
 })
-*/
