@@ -1,6 +1,6 @@
 // Create a project
-const ProjectFactory = (title, description) => {
-    title = '';
+const ProjectFactory = (title) => {
+    title = title;
     description = '';
     dueDate = '';
     priority = '';
