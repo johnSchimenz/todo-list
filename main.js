@@ -81,15 +81,25 @@ tripPacking.toDoArray = [tShirts, sunblock, camera];
 
 // DOM: Upon click, display toDo items on right side
 const projects = document.querySelectorAll('.project');
+let currentProjectArray = [];
 projects.forEach((project) => {
     project.addEventListener('click', () => {
+        currentProjectArray = [];
         let currentProject = document.createElement('div');
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
+            currentProjectArray.push(projectsArray[project.id].toDoArray[i].title,
+                projectsArray[project.id].toDoArray[i].dueDate,
+                projectsArray[project.id].toDoArray[i].description,
+                projectsArray[project.id].toDoArray[i].checkboxButton,
+                projectsArray[project.id].toDoArray[i].deleteButton);
+                currentProject.textContent = currentProjectArray;
+            /*
             currentProject.textContent = `${projectsArray[project.id].toDoArray[i].title}, ` +
                 `${projectsArray[project.id].toDoArray[i].dueDate}, ` +
                 `${projectsArray[project.id].toDoArray[i].description}, ` +
                 `${projectsArray[project.id].toDoArray[i].checkboxButton}, ` +
                 `${projectsArray[project.id].toDoArray[i].deleteButton}`;
+            */
         }
         rightBottomContainer.appendChild(currentProject);
     })
