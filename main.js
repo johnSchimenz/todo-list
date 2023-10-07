@@ -88,9 +88,9 @@ projects.forEach((project) => {
         const deleteCurrentProject = document.querySelector('#current-project');
         deleteCurrentProject.remove();
 
-        // DOM: display current poject on right side
+        // DOM: display current project on right side
         currentProjectArray = [];
-        let currentProject = document.createElement('div');
+        const currentProject = document.createElement('div');
         currentProject.setAttribute('id', 'current-project');
         for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
             currentProjectArray.push(projectsArray[project.id].toDoArray[i].title,
@@ -98,15 +98,8 @@ projects.forEach((project) => {
                 projectsArray[project.id].toDoArray[i].description,
                 projectsArray[project.id].toDoArray[i].checkboxButton,
                 projectsArray[project.id].toDoArray[i].deleteButton);
-                currentProject.textContent = currentProjectArray;
-            /*
-            currentProject.textContent = `${projectsArray[project.id].toDoArray[i].title}, ` +
-                `${projectsArray[project.id].toDoArray[i].dueDate}, ` +
-                `${projectsArray[project.id].toDoArray[i].description}, ` +
-                `${projectsArray[project.id].toDoArray[i].checkboxButton}, ` +
-                `${projectsArray[project.id].toDoArray[i].deleteButton}`;
-            */
         }
+        currentProject.textContent = currentProjectArray;
         rightBottomContainer.appendChild(currentProject);
     })
 })
