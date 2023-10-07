@@ -89,7 +89,7 @@ projects.forEach((project) => {
         deleteCurrentProject.remove();
 
         // DOM: display current poject on right side
-        currentProjectArray = []; // Not sure if I need this anymore
+        currentProjectArray = [];
         let currentProject = document.createElement('div');
         currentProject.setAttribute('id', 'current-project');
         for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
