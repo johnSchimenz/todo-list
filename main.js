@@ -85,14 +85,12 @@ projects.forEach((project) => {
     project.addEventListener('click', () => {
         let currentProject = document.createElement('div');
         for (let i = 0; i < 3; i++) {
-            console.log(projectsArray[project.id].toDoArray[i].title);
-            console.log(projectsArray[project.id].toDoArray[i].dueDate);
-            console.log(projectsArray[project.id].toDoArray[i].description);
-            console.log(projectsArray[project.id].toDoArray[i].checkboxButton);
-            console.log(projectsArray[project.id].toDoArray[i].deleteButton);
+            currentProject.textContent = `${projectsArray[project.id].toDoArray[i].title}, ` +
+                `${projectsArray[project.id].toDoArray[i].dueDate}, ` +
+                `${projectsArray[project.id].toDoArray[i].description}, ` +
+                `${projectsArray[project.id].toDoArray[i].checkboxButton}, ` +
+                `${projectsArray[project.id].toDoArray[i].deleteButton}`;
         }
-        currentProject.textContent = projectsArray[project.id].toDoArray[project.id].title; // Displays parts of toDo object properties, but not all
-        //currentProject.textContent = projectsArray[project.id];
         rightBottomContainer.appendChild(currentProject);
     })
 })
