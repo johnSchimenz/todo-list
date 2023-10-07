@@ -84,9 +84,12 @@ const projects = document.querySelectorAll('.project');
 let currentProjectArray = [];
 projects.forEach((project) => {
     project.addEventListener('click', () => {
+        // DOM: delete past current project on right side
         const deleteCurrentProject = document.querySelector('#current-project');
         deleteCurrentProject.remove();
-        currentProjectArray = [];
+
+        // DOM: display current poject on right side
+        currentProjectArray = []; // Not sure if I need this anymore
         let currentProject = document.createElement('div');
         currentProject.setAttribute('id', 'current-project');
         for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
