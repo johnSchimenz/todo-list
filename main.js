@@ -79,18 +79,19 @@ groceries.toDoArray = [apples, bananas, groundBeef];
 chores.toDoArray = [makeBed, washDishes, vaccuum];
 tripPacking.toDoArray = [tShirts, sunblock, camera];
 
-// CONSOLE: Display a project and toDo items
-for (let i = 0; i < groceries.toDoArray.length; i++) {
-    console.log(groceries.toDoArray[i].title);
-}
-
 // DOM: Upon click, display toDo items on right side
 const projects = document.querySelectorAll('.project');
 projects.forEach((project) => {
     project.addEventListener('click', () => {
         let currentProject = document.createElement('div');
-        currentProject.textContent = projectsArray[project.id].toDoArray[project.id].title; // Displays parts of toDo object properties
-        console.log(projectsArray);
+        for (let i = 0; i < 3; i++) {
+            console.log(projectsArray[project.id].toDoArray[i].title);
+            console.log(projectsArray[project.id].toDoArray[i].dueDate);
+            console.log(projectsArray[project.id].toDoArray[i].description);
+            console.log(projectsArray[project.id].toDoArray[i].checkboxButton);
+            console.log(projectsArray[project.id].toDoArray[i].deleteButton);
+        }
+        currentProject.textContent = projectsArray[project.id].toDoArray[project.id].title; // Displays parts of toDo object properties, but not all
         //currentProject.textContent = projectsArray[project.id];
         rightBottomContainer.appendChild(currentProject);
     })
