@@ -84,8 +84,11 @@ const projects = document.querySelectorAll('.project');
 let currentProjectArray = [];
 projects.forEach((project) => {
     project.addEventListener('click', () => {
+        const deleteCurrentProject = document.querySelector('#current-project');
+        deleteCurrentProject.remove();
         currentProjectArray = [];
         let currentProject = document.createElement('div');
+        currentProject.setAttribute('id', 'current-project');
         for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
             currentProjectArray.push(projectsArray[project.id].toDoArray[i].title,
                 projectsArray[project.id].toDoArray[i].dueDate,
