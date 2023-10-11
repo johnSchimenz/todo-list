@@ -92,14 +92,21 @@ projects.forEach((project) => {
         currentProjectArray = [];
         const currentProject = document.createElement('div');
         currentProject.setAttribute('id', 'current-project');
+        rightBottomContainer.appendChild(currentProject);
+
+        const currentProjectTitle = document.createElement('div');
+        currentProjectTitle.setAttribute('id', 'current-project-title');
+        currentProjectTitle.textContent = 'Trial';
+        currentProject.appendChild(currentProjectTitle);
+
         for (let i = 0; i < projectsArray[project.id].toDoArray.length; i++) {
             currentProjectArray.push(projectsArray[project.id].toDoArray[i].title,
                 projectsArray[project.id].toDoArray[i].dueDate,
                 projectsArray[project.id].toDoArray[i].description,
                 projectsArray[project.id].toDoArray[i].checkboxButton,
                 projectsArray[project.id].toDoArray[i].deleteButton);
+
         }
         currentProject.textContent = currentProjectArray;
-        rightBottomContainer.appendChild(currentProject);
     })
 })
